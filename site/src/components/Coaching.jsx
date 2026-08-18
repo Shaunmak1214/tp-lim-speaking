@@ -48,7 +48,7 @@ export default function Coaching() {
             <img
               src="/images/pillar-leadership.jpg"
               alt="A results coach working with a group"
-              className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-[1.03]"
+              className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
             <span className="absolute inset-0 bg-gradient-to-r from-ember/70 via-ember/15 to-transparent" />
             <span className="absolute inset-0 grid place-items-center">

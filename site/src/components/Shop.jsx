@@ -36,11 +36,12 @@ export default function Shop() {
         </a>
       </div>
 
-      <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {shown.map((p) => (
-          <a key={p.name} href="#" className="group flex flex-col rounded-xl bg-shell p-4 transition hover:bg-cloud">
+      <Reveal stagger>
+        <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {shown.map((p, i) => (
+            <a key={p.name} href="#" style={{ '--stagger-i': i }} className="stagger-item group flex flex-col rounded-xl bg-shell p-4 transition hover:bg-cloud">
             <div className="overflow-hidden rounded-lg">
-              <img src={p.img} alt={p.name} className="aspect-square w-full object-cover transition duration-700 group-hover:scale-[1.04]" />
+              <img src={p.img} alt={p.name} className="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
             </div>
             <div className="flex items-end justify-between gap-3 px-1 pb-2 pt-6">
               <div>
@@ -51,9 +52,10 @@ export default function Shop() {
                 <CaretRight size={16} weight="bold" />
               </span>
             </div>
-          </a>
-        ))}
-      </div>
+            </a>
+          ))}
+        </div>
+      </Reveal>
     </section>
   )
 }

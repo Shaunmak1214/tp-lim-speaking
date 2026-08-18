@@ -31,7 +31,7 @@ export default function Hero() {
               <img
                 src="/images/featured.jpg"
                 alt="Breakthrough Live, Singapore"
-                className="aspect-video w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+                className="aspect-video w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
               <div className="absolute inset-0 bg-black/20" />
               <div className="absolute bottom-3 left-4 text-white">

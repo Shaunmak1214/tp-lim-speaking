@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { CaretLeft, CaretRight } from '@phosphor-icons/react'
 
-export function Reveal({ children, className = '', delay = 0 }) {
+export function Reveal({ children, className = '', delay = 0, stagger = false }) {
   const ref = useRef(null)
   useEffect(() => {
     const el = ref.current
@@ -19,7 +19,7 @@ export function Reveal({ children, className = '', delay = 0 }) {
     return () => io.disconnect()
   }, [])
   return (
-    <div ref={ref} className={`reveal ${className}`} style={delay ? { animationDelay: `${delay}ms` } : undefined}>
+    <div ref={ref} className={`${stagger ? 'reveal-stagger' : 'reveal'} ${className}`} style={delay ? { animationDelay: `${delay}ms` } : undefined}>
       {children}
     </div>
   )
@@ -78,7 +78,8 @@ export function useCarousel() {
   const scrollBy = (dir) => {
     const el = trackRef.current
     if (!el) return
-    el.scrollBy({ left: dir * Math.round(el.clientWidth * 0.85), behavior: 'smooth' })
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    el.scrollBy({ left: dir * Math.round(el.clientWidth * 0.85), behavior: reduce ? 'auto' : 'smooth' })
   }
 
   return { trackRef, canPrev, canNext, scrollBy }

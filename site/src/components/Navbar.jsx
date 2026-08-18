@@ -50,22 +50,24 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {open && (
-        <div className="border-t border-white/10 bg-black px-5 pb-8 pt-4 lg:hidden">
-          <ul className="flex flex-col gap-4">
-            {NAV_LINKS.map((l) => (
-              <li key={l}>
-                <a href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)} className="text-lg font-semibold text-white">
-                  {l}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <a href="#coaching" className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-semibold text-black">
-            Start now
-          </a>
-        </div>
-      )}
+      <div
+        className={`absolute inset-x-0 top-full border-t border-white/10 bg-black px-5 pb-8 pt-4 transition-[opacity,transform,visibility] duration-200 ease-out motion-reduce:transform-none lg:hidden ${
+          open ? 'visible translate-y-0 opacity-100' : 'pointer-events-none invisible -translate-y-2 opacity-0'
+        }`}
+      >
+        <ul className="flex flex-col gap-4">
+          {NAV_LINKS.map((l) => (
+            <li key={l}>
+              <a href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)} className="text-lg font-semibold text-white">
+                {l}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a href="#coaching" className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-semibold text-black">
+          Start now
+        </a>
+      </div>
     </header>
   )
 }

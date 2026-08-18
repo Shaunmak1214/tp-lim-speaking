@@ -43,7 +43,7 @@ export default function About() {
           <img
             src="/images/event-workshop.jpg"
             alt="Inside a TP Lim leadership workshop"
-            className="aspect-video w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+            className="aspect-video w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
           />
           <span className="absolute inset-0 grid place-items-center">
             <span className="inline-flex items-center gap-2.5 rounded-full bg-black/40 px-6 py-3.5 text-[15px] font-semibold text-white backdrop-blur transition group-hover:bg-black/55">
