@@ -1,0 +1,63 @@
+@import '@fontsource-variable/archivo';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Archivo Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'SFMono-Regular', ui-monospace, 'Cascadia Mono', Menlo, monospace;
+
+  --color-ink: #000000;
+  --color-coal: #161616;
+  --color-panel: #1d1d1d;
+  --color-line: #2b2b2b;
+  --color-mist: #bcbcbc;
+  --color-fog: #7c7c7c;
+  --color-steel: #4d4d4d;
+  --color-cloud: #f2f2f2;
+  --color-shell: #f6f6f5;
+  --color-ember: #ff9700;
+  --color-azure: #2764ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: #fff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.display {
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+  }
+  .reveal.in-view {
+    animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
