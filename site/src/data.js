@@ -1,91 +1,156 @@
-export const NAV_LINKS = ['About', 'Programs', 'Events', 'Coaching', 'Explore', 'Shop']
+// Content per PLAN.md. Discussion transcript supersedes the docx brief.
+// TODO(assets): swap placeholder imagery for TP's real era photos before launch.
 
-export const PROGRAMS = [
-  { name: 'Breakthrough Live', sub: 'Decide who you become next', img: '/images/event-arena.jpg' },
-  { name: 'Momentum Mastery', sub: 'Turn one strong week into a year', img: '/images/pillar-mindset.jpg' },
-  { name: 'Wealth Architect', sub: 'Build money systems that compound', img: '/images/pillar-wealth.jpg' },
-  { name: 'Limitless Health', sub: 'Energy engineered on purpose', img: '/images/pillar-health.jpg' },
-  { name: 'Inner Circle', sub: 'A private room that raises your floor', img: '/images/pillar-business.jpg' },
-  { name: 'Leadership Forge', sub: 'Lead rooms that used to scare you', img: '/images/pillar-leadership.jpg' },
-  { name: 'Island Reset', sub: 'Recover the person behind the role', img: '/images/event-retreat.jpg' },
+export const SCHEDULE_URL = '#enquire' // TODO: replace with Calendly (or chosen scheduler) link
+export const WHATSAPP_URL = 'https://wa.me/60000000000' // TODO: TP's real WhatsApp number
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/tplim789/'
+
+export const NAV_LINKS = [
+  { label: 'About', href: '#story' },
+  { label: 'Speaking', href: '#keynotes' },
+  { label: 'Proof', href: '#proof' },
+  { label: 'Projects', href: '#projects' },
 ]
 
-export const PILLARS = ['Mindset', 'Wealth', 'Health', 'Relationships', 'Business', 'Leadership', 'Happiness']
+export const CREDS = [
+  { stat: '25+', label: 'years holding live stages' },
+  { stat: '13', label: 'years as an Astro TV host' },
+  { stat: '100+', label: 'characters played for top brands' },
+  { stat: '3', label: 'languages, full keynotes in each' },
+]
 
-export const QUOTE = {
-  text: 'I walked in exhausted and skeptical. I walked out with a plan I actually executed, and the person to hold me to it.',
-  people: [
-    { name: 'Amira Hassan', role: 'Founder, Selatan Foods', img: '/images/testimonial-1.jpg' },
-    { name: 'Marcus Tan', role: 'National track athlete', img: '/images/testimonial-2.jpg' },
-    { name: 'Priya Nair', role: 'CEO, Vantara Group', img: '/images/testimonial-3.jpg' },
-  ],
+export const CRED_BADGES = ['Executive Producer · HOWL', 'ICF Associate Certified Coach', 'HRD Corp Accredited Trainer', 'Barrister-at-Law · Lincoln’s Inn']
+
+// Approved quote: must be used exactly (sitewide content rules).
+export const STORY_QUOTE =
+  'People rarely change because they are given more information. They change when a story enables them to see differently.'
+
+export const TIMELINE = [
+  {
+    year: '1999',
+    title: 'The break',
+    text: 'Wins the Astro Talent Quest Best Talent Award, judged by Wang Leehom, and steps into thirteen years of live television.',
+    img: '/images/event-arena.jpg', // TODO: real Astro-era photo
+  },
+  {
+    year: 'The 2000s',
+    title: 'The MC years',
+    text: 'The emcee Malaysia’s biggest brands book by name: Panasonic eight years running, Great Eastern, the banks, the telcos. Over a hundred characters, three languages, five to fifteen gigs a month.',
+    img: '/images/featured.jpg', // TODO: real MC/character photo
+  },
+  {
+    year: 'The foundation',
+    title: 'The barrister',
+    text: 'Underneath it all: a law degree from Bristol and a Barrister-at-Law call from Lincoln’s Inn. He never practised, but the courtroom craft of persuasion never left.',
+    img: '/images/pillar-business.jpg', // TODO: real law-era photo
+  },
+  {
+    year: '11 years',
+    title: 'The film chapter',
+    text: 'Managing Director of the Kuala Lumpur operations of a Hong Kong entertainment company founded by Andy Lau: production, talent, marketing, fundraising, distribution.',
+    img: '/images/event-summit.jpg', // TODO: real film-era photo (verify Andy Lau imagery rights)
+  },
+  {
+    year: '17 years',
+    title: 'The living world',
+    text: 'Seventeen years alongside Dr Jane Goodall through Roots & Shoots. Executive Producer of HOWL. Co-producing The Vanishing Song with Oscar-winning filmmaker Ruby Yang.',
+    img: '/images/pillar-mindset.jpg', // TODO: real conservation photo (verify Dr Jane imagery licence)
+  },
+  {
+    year: 'Today',
+    title: 'All of it, on stage',
+    text: 'The barrister’s precision, the host’s energy, the filmmaker’s story craft, the conservationist’s sense of what matters. One speaker, many lives.',
+    img: '/images/portrait.jpg', // TODO: real current portrait
+  },
+]
+
+export const ARENAS = [
+  { name: 'The Courtroom', line: 'Law taught him that an argument is a story with stakes, and precision is a kindness to the listener.' },
+  { name: 'The Stage', line: 'Thirteen years of live TV and a hundred characters taught him energy, timing, and how to read any room.' },
+  { name: 'The Screen', line: 'Eleven years in film taught him that a story lands hardest when it is built, shot by shot, on purpose.' },
+  { name: 'The Wild', line: 'Seventeen years beside Dr Jane Goodall taught him that the stories worth telling change what people protect.' },
+]
+
+// Keynote copy is the approved V1 wording from the build brief.
+export const KEYNOTES = [
+  {
+    flagship: true,
+    title: 'Beyond Speed',
+    sub: 'What Nature Teaches Us About Leadership in the Age of AI',
+    q: 'How can leaders make wiser decisions, protect what is human and redesign work as AI becomes more capable?',
+  },
+  {
+    flagship: false,
+    title: 'Beyond Compliance',
+    sub: 'Making Sustainability Meaningful to People',
+    q: 'How do organisations move sustainability beyond reporting and turn it into something people understand, care about and act on?',
+  },
+  {
+    flagship: false,
+    title: 'Nature-Inspired Leadership',
+    sub: 'What Living Systems Teach Us About Resilience, Adaptation and Long-Term Performance',
+    q: 'What can nature teach us about building organisations that are more adaptive, resilient and capable of thriving through change?',
+  },
+]
+
+export const FORMATS = [
+  '10-minute convention opener',
+  '30-45 minute keynote',
+  '45-60 minute keynote',
+  'Keynote + Q&A',
+  'Keynote + facilitated conversation',
+  'Keynote + workshop',
+]
+
+// TODO(permissions): every logo/wordmark below must be classified (client / host / programme)
+// and permission-checked before launch. Text wordmarks are placeholders.
+export const BRANDS = ['Panasonic', 'Great Eastern', 'Astro', 'Watsons', 'Nestlé', 'Digi']
+
+// Testimonial: supplied wording, used faithfully. Attributed to the Roots & Shoots
+// session per the publication gate (no TP-specific attribution without permission).
+export const TESTIMONIAL = {
+  quote:
+    'The Healthy Soil, Healthy Life session was highly engaging and made complex environmental topics both relatable and actionable. It sparked genuine curiosity and meaningful conversations about sustainability, creating an emotional connection that motivated employees to reflect on how their individual actions can contribute to a greater impact.',
+  name: 'Yee Yin Sinn',
+  role: 'ESG Club President, British American Tobacco Malaysia',
+  context: 'On a Roots & Shoots sustainability session facilitated with TP',
 }
 
-export const PRESS = ['Meridian Review', 'The Peak Asia', 'FirstMover', 'Vantage Weekly']
-
-export const RESULT_CARDS = [
-  '/images/testimonial-1.jpg',
-  '/images/testimonial-2.jpg',
-  '/images/testimonial-3.jpg',
-  '/images/results.jpg',
-]
-
-export const EVENTS = [
+export const PROJECTS = [
   {
-    name: 'Breakthrough Live',
-    tagline: 'Decide who you are going to be next',
-    blurb: 'Four days that break the pattern you keep promising yourself you will break.',
-    date: 'Nov 12-15, 2026',
-    place: 'Singapore Expo',
-    timezone: 'SGT',
-    img: '/images/event-arena.jpg',
+    name: 'HOWL',
+    credit: 'Executive Producer',
+    text: 'A live-action feature film executive produced by a group that includes Leonardo DiCaprio and the late Dr Jane Goodall. Told through the eyes of an abandoned family dog and a young wolf.',
+    img: '/images/pillar-happiness.jpg', // TODO: approved HOWL artwork (verify rights + credit wording)
   },
   {
-    name: 'Wealth Architect Summit',
-    tagline: 'Make money a machine, not a mood',
-    blurb: 'Three days with the investors and operators building all-weather portfolios.',
-    date: 'Jan 22-24, 2027',
-    place: 'ICC Sydney',
-    timezone: 'AEDT',
-    img: '/images/event-summit.jpg',
-  },
-  {
-    name: 'Island Reset',
-    tagline: 'Recover the person behind the role',
-    blurb: 'Seven days of recovery, clarity and planning in a place built for both.',
-    date: 'Mar 8-14, 2027',
-    place: 'Nusa Retreat, Bali',
-    timezone: 'WITA',
-    img: '/images/event-retreat.jpg',
-  },
-  {
-    name: 'Leadership Forge',
-    tagline: 'Move people without pushing them',
-    blurb: 'A working lab for executives who carry rooms, teams and outcomes.',
-    date: 'May 20-22, 2027',
-    place: 'ExCeL London',
-    timezone: 'BST',
-    img: '/images/event-workshop.jpg',
+    name: 'The Vanishing Song',
+    credit: 'Co-Producer',
+    text: 'A nature documentary centred on the gibbon, co-produced with Oscar-winning filmmaker Ruby Yang. Story as a way of giving a voice to what we risk losing.',
+    img: '/images/event-retreat.jpg', // TODO: approved project still (verify title styling + credits)
   },
 ]
 
-export const SHOP_FILTERS = ['All', 'Books', 'Digital', 'Journals', 'Supplements']
-
-export const PRODUCTS = [
-  { name: 'The Decision Playbook', category: 'Books', price: 'S$34', img: '/images/product-book.jpg' },
-  { name: 'Momentum Journal', category: 'Journals', price: 'S$28', img: '/images/product-journal.jpg' },
-  { name: 'Prime Fuel Essentials', category: 'Supplements', price: 'S$52', img: '/images/product-supplement.jpg' },
-  { name: 'Focus Audio Course', category: 'Digital', price: 'S$97', img: '/images/product-audio.jpg' },
+export const RETRO_CLIPS = [
+  { label: 'Jack Sparrow, but for fridges', meta: 'Panasonic annual convention' },
+  { label: 'Three languages, one gala night', meta: 'Chinese New Year, live' },
+  { label: 'Live TV. No retakes.', meta: 'Astro, 13 seasons' },
 ]
 
-export const EPISODES = [
-  { title: 'The anatomy of a decision that sticks', tag: 'Mindset', date: 'Aug 4, 2026', length: '48 min' },
-  { title: 'What wealthy people automate first', tag: 'Wealth', date: 'Jul 21, 2026', length: '54 min' },
-  { title: 'Leading when you are the least sure person in the room', tag: 'Leadership', date: 'Jul 7, 2026', length: '41 min' },
+export const BEYOND = [
+  { name: 'Workshops', line: 'Interactive sessions on leadership, storytelling and change.' },
+  { name: 'Executive coaching', line: 'One-to-one coaching for clarity and direction (ICF ACC).' },
+  { name: 'Leadership retreats', line: 'Space to step out of urgency and think properly.' },
+  { name: 'Sustainability conversations', line: 'Engagements that make sustainability human and actionable.' },
 ]
 
-export const FOOTER_LINKS = [
-  ['About', 'Events', 'Programs', 'Coaching', 'Start now'],
-  ['Podcast', 'Articles', 'Free resources', 'Shop all'],
-  ['Community', 'Assessments', 'Careers', 'Giving'],
+export const ENQUIRY_INTERESTS = [
+  'Keynote speaking',
+  'Convention opener',
+  'Emcee / hosting',
+  'Workshop or retreat',
+  'Executive coaching',
+  'Something else',
 ]
+
+export const FOOTER_NAV = ['About', 'Speaking', 'Proof', 'Projects', 'Enquire']
